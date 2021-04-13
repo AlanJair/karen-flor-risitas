@@ -7,7 +7,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="Categorias")
+@Table(name="categorias")
 //EN web se conoce como jababean o pojo
 public class Categoria {
 	@Id

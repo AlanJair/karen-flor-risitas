@@ -11,7 +11,7 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="Vacantes")
+@Table(name="vacantes")
 public class vacante {
 	//Atributos iniciales
 	@Id
