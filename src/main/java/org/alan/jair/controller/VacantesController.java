@@ -138,7 +138,7 @@ public class VacantesController {
 	public String verDetalle(@PathVariable("id") int idVacante, Model model) {
 		System.out.println("IdVacante = " + serviceVacante.buscarPorId(idVacante));
 		model.addAttribute("vacante", serviceVacante.buscarPorId(idVacante));
-		return "Vacantes/detalle";
+		return "vacantes/detalle";
 	}
 	
 	@GetMapping("/eliminar")
