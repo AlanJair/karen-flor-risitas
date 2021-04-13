@@ -16,7 +16,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="Usuarios")
-public class usuario {
+public class Usuario {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
@@ -33,7 +33,7 @@ public class usuario {
                 joinColumns = @JoinColumn(name="idUsuario"),
                 inverseJoinColumns = @JoinColumn(name="idPerfil")
     )
-    private List<perfil> perfiles;
+    private List<Perfil> perfiles;
 
 	public Integer getId() {
 		return id;
@@ -91,11 +91,11 @@ public class usuario {
 		this.fechaRegistro = fechaRegistro;
 	}
 
-	public List<perfil> getPerfiles() {
+	public List<Perfil> getPerfiles() {
 		return perfiles;
 	}
 
-	public void setPerfiles(List<perfil> perfiles) {
+	public void setPerfiles(List<Perfil> perfiles) {
 		this.perfiles = perfiles;
 	}
 	
@@ -107,9 +107,9 @@ public class usuario {
 	}
 
 	//metodo Helper para agregar los perfiles
-	public void agregar(perfil tempPerfil) {
+	public void agregar(Perfil tempPerfil) {
         if ( perfiles == null) {
-            perfiles = new LinkedList<perfil>();
+            perfiles = new LinkedList<Perfil>();
         }
         perfiles.add(tempPerfil);
     }

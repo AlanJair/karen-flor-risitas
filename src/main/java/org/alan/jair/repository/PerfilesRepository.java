@@ -1,10 +1,10 @@
 package org.alan.jair.repository;
 
-import org.alan.jair.model.perfil;
+import org.alan.jair.model.Perfil;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 
 
-public interface PerfilesRepository extends JpaRepository<perfil, Integer> {
+public interface PerfilesRepository extends JpaRepository<Perfil, Integer> {
 
 }

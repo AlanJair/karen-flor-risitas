@@ -5,7 +5,7 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 
-import org.alan.jair.model.categoria;
+import org.alan.jair.model.Categoria;
 import org.alan.jair.model.vacante;
 import org.alan.jair.service.IntCategoriasService;
 import org.alan.jair.service.IntVacantesService;
@@ -93,7 +93,7 @@ public class VacantesController {
 		}
 		
 		//guardar en la tabla o en la lista
-		categoria c = serviceCategoria.buscarPorId(vacante.getCategoria().getId());
+		Categoria c = serviceCategoria.buscarPorId(vacante.getCategoria().getId());
 		vacante.setCategoria(c);
 		
 		//vacante.setId(serviceVacante.obtenerTodas().size()+1);
@@ -128,7 +128,7 @@ public class VacantesController {
 	@GetMapping("/crear")
 	public String crear(vacante vacante, Model model) {
 		model.addAttribute("categorias", serviceCategoria.obtenerTodas());
-		for(categoria c : serviceCategoria.obtenerTodas()) {
+		for(Categoria c : serviceCategoria.obtenerTodas()) {
 			System.err.println(c);
 		}
 		return "vacantes/formVacante";

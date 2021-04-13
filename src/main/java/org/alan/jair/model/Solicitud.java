@@ -2,7 +2,7 @@ package org.alan.jair.model;
 
 import java.time.LocalDate;
 
-public class solicitud {
+public class Solicitud {
 
 	private Integer id;
 	private LocalDate fecha; //Fecha enque se aplico la oferta

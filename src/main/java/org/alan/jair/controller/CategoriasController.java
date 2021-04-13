@@ -2,7 +2,7 @@ package org.alan.jair.controller;
 
 import java.util.List;
 
-import org.alan.jair.model.categoria;
+import org.alan.jair.model.Categoria;
 
 import org.alan.jair.service.IntCategoriasService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,14 +24,14 @@ public class CategoriasController {
 	
 	@RequestMapping(value="/indexPaginate",method=RequestMethod.GET)
 	public String mostrarIndexPaginado(Model model, Pageable page) {
-		Page<categoria> lista = serviceCategorias.buscarTodas(page);
+		Page<Categoria> lista = serviceCategorias.buscarTodas(page);
 		model.addAttribute("categorias", lista);
 		return "categorias/listaCategorias";
 	}
 	
 	@RequestMapping(value="/editar",method=RequestMethod.GET)
 	public String editar(@RequestParam("id") int idCategoria, Model model) {
-		categoria categoria = serviceCategorias.buscarPorId(idCategoria);
+		Categoria categoria = serviceCategorias.buscarPorId(idCategoria);
 		model.addAttribute("categoria", categoria);
 		return "categorias/formCategorias";
 	}
@@ -49,8 +49,8 @@ public class CategoriasController {
 	//RequestMapping a nivel del metodo
 	@RequestMapping(value="/index",method=RequestMethod.GET)
 	public String mostrarIndex(Model model) {
-		List<categoria> lista = serviceCategorias.obtenerTodas();
-		for(categoria c : lista) {
+		List<Categoria> lista = serviceCategorias.obtenerTodas();
+		for(Categoria c : lista) {
 			System.out.println(c);
 		}
 		model.addAttribute("categorias", lista);
@@ -59,12 +59,12 @@ public class CategoriasController {
 	
 	//@GetMapping("/crear")
 	@RequestMapping(value="/crear",method=RequestMethod.GET)
-	public String crear(categoria categoria) {
+	public String crear(Categoria categoria) {
 		return "categorias/formCategorias";
 	}
 	
 	@RequestMapping(value="/guardar",method=RequestMethod.POST)
-	public String guardar(categoria categoria, RedirectAttributes attributes) {
+	public String guardar(Categoria categoria, RedirectAttributes attributes) {
 		//categoria.setId(serviceCategorias.obtenerTodas().size()+1);
 		serviceCategorias.guardar(categoria);
 		attributes.addFlashAttribute("msg", "La categoria de guardo con exito.");

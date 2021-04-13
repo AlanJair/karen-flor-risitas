@@ -29,7 +29,7 @@ public class vacante {
 	@OneToOne
 	@JoinColumn(name="idCategoria")
 	//@Transient //para descartar este atributo pues no tenemos la  relacion
-	private categoria categoria;
+	private Categoria categoria;
 	
 	public Integer getId() {
 		return id;
@@ -87,10 +87,10 @@ public class vacante {
 		this.detalles = detalles;
 	}
 	
-	public categoria getCategoria() {
+	public Categoria getCategoria() {
 		return categoria;
 	}
-	public void setCategoria(categoria categoria) {
+	public void setCategoria(Categoria categoria) {
 		this.categoria = categoria;
 	}
 	@Override

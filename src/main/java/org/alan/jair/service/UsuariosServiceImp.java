@@ -6,20 +6,20 @@ import java.time.format.DateTimeParseException;
 import java.util.LinkedList;
 import java.util.List;
 
-import org.alan.jair.model.usuario;
+import org.alan.jair.model.Usuario;
 import org.springframework.stereotype.Service;
 
 @Service
 public class UsuariosServiceImp implements IntUsuariosService {
 	
 	//variable de clase
-	private List<usuario> lista = null;
+	private List<Usuario> lista = null;
 	
 	public UsuariosServiceImp(){
-		lista = new LinkedList<usuario>(); 
+		lista = new LinkedList<Usuario>(); 
 		try {
 			//primer objeto tipo Usuario
-			usuario u1 = new usuario();
+			Usuario u1 = new Usuario();
 			u1.setId(1);
 			u1.setNombre("Natalia");
 			u1.setUsername("natalia10");
@@ -31,7 +31,7 @@ public class UsuariosServiceImp implements IntUsuariosService {
 			lista.add(u1);
 			
 			//segundo objeto tipo Usuario
-			usuario u2 = new usuario();
+			Usuario u2 = new Usuario();
 			u2.setId(2);
 			u2.setNombre("Armando");
 			u2.setUsername("natalia10");
@@ -43,7 +43,7 @@ public class UsuariosServiceImp implements IntUsuariosService {
 			lista.add(u2);
 			
 			//tercer objeto tipo Usuario
-			usuario u3 = new usuario();
+			Usuario u3 = new Usuario();
 			u3.setId(3);
 			u3.setNombre("Antonio");
 			u3.setUsername("antonio50");
@@ -55,7 +55,7 @@ public class UsuariosServiceImp implements IntUsuariosService {
 			lista.add(u3);
 			
 			//cuarto objeto tipo Usuario
-			usuario u4 = new usuario();
+			Usuario u4 = new Usuario();
 			u4.setId(4);
 			u4.setNombre("Jair");
 			u4.setUsername("jair777");
@@ -72,15 +72,15 @@ public class UsuariosServiceImp implements IntUsuariosService {
 	}
 	
 	@Override
-	public List<usuario> obtenerTodas() {
+	public List<Usuario> obtenerTodas() {
 		// TODO Auto-generated method stub
 		return lista;
 	}
 
 	@Override
-	public usuario buscarPorId(Integer idUsuario) {
+	public Usuario buscarPorId(Integer idUsuario) {
 		// TODO Auto-generated method stub
-		for(usuario usuario : lista) {
+		for(Usuario usuario : lista) {
 			if(usuario.getId() == idUsuario) {
 				return usuario;
 			}	
@@ -89,7 +89,7 @@ public class UsuariosServiceImp implements IntUsuariosService {
 	}
 
 	@Override
-	public void guardar(usuario usuario) {
+	public void guardar(Usuario usuario) {
 		// TODO Auto-generated method stub
 		lista.add(usuario);
 

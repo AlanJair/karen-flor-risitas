@@ -9,7 +9,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name="Categorias")
 //EN web se conoce como jababean o pojo
-public class categoria {
+public class Categoria {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;

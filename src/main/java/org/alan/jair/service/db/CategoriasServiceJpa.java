@@ -3,7 +3,7 @@ package org.alan.jair.service.db;
 import java.util.List;
 import java.util.Optional;
 
-import org.alan.jair.model.categoria;
+import org.alan.jair.model.Categoria;
 import org.alan.jair.repository.CategoriasRepository;
 import org.alan.jair.service.IntCategoriasService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,14 +20,14 @@ public class CategoriasServiceJpa implements IntCategoriasService {
 	private CategoriasRepository repoCategorias;
 
 	@Override
-	public List<categoria> obtenerTodas() {
+	public List<Categoria> obtenerTodas() {
 		// TODO Auto-generated method stub
 		return repoCategorias.findAll();
 	}
 	
 	@Override
-	public categoria buscarPorId(Integer idCategoria) {
-		Optional<categoria> optional = repoCategorias.findById(idCategoria);
+	public Categoria buscarPorId(Integer idCategoria) {
+		Optional<Categoria> optional = repoCategorias.findById(idCategoria);
 		if(optional.isPresent()) {
 			return optional.get();
 		}
@@ -35,7 +35,7 @@ public class CategoriasServiceJpa implements IntCategoriasService {
 	}
 
 	@Override
-	public void guardar(categoria categoria) {
+	public void guardar(Categoria categoria) {
 		// TODO Auto-generated method stub
 		repoCategorias.save(categoria);
 	}
@@ -47,7 +47,7 @@ public class CategoriasServiceJpa implements IntCategoriasService {
 	}
 	
 	@Override
-	public Page<categoria> buscarTodas(Pageable page) {
+	public Page<Categoria> buscarTodas(Pageable page) {
 		// TODO Auto-generated method stub
 		return repoCategorias.findAll(page);
 	}

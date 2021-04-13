@@ -2,7 +2,7 @@ package org.alan.jair.controller;
 
 import java.util.List;
 
-import org.alan.jair.model.usuario;
+import org.alan.jair.model.Usuario;
 import org.alan.jair.service.IntUsuariosService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -19,8 +19,8 @@ public class UsuariosController {
 	
 	@GetMapping("/index")
 	public String mostrarIndex(Model model) {
-		List<usuario> lista= usuariosService.obtenerTodas();
-		for(usuario u: lista) {
+		List<Usuario> lista= usuariosService.obtenerTodas();
+		for(Usuario u: lista) {
 			System.out.println(u);
 		}
 		model.addAttribute("usuarios", lista);
