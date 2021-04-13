@@ -13,16 +13,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("inicio")
 public class HomeController {
 	
 	@Autowired
 	private IntVacantesService serviceVacantes;
 	
-	@GetMapping("/hola")
+	@GetMapping("/")
 	public String mostrarHome(Model model) {
 		//Devuelve una vista (Un archivo html)
 		List<vacante> vacantes = serviceVacantes.obtenerTodas();
