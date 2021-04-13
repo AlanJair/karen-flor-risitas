@@ -33,7 +33,7 @@ public class usuario {
                 joinColumns = @JoinColumn(name="idUsuario"),
                 inverseJoinColumns = @JoinColumn(name="idPerfil")
     )
-    private List<Perfil> perfiles;
+    private List<perfil> perfiles;
 
 	public Integer getId() {
 		return id;
@@ -91,11 +91,11 @@ public class usuario {
 		this.fechaRegistro = fechaRegistro;
 	}
 
-	public List<Perfil> getPerfiles() {
+	public List<perfil> getPerfiles() {
 		return perfiles;
 	}
 
-	public void setPerfiles(List<Perfil> perfiles) {
+	public void setPerfiles(List<perfil> perfiles) {
 		this.perfiles = perfiles;
 	}
 	
@@ -107,9 +107,9 @@ public class usuario {
 	}
 
 	//metodo Helper para agregar los perfiles
-	public void agregar(Perfil tempPerfil) {
+	public void agregar(perfil tempPerfil) {
         if ( perfiles == null) {
-            perfiles = new LinkedList<Perfil>();
+            perfiles = new LinkedList<perfil>();
         }
         perfiles.add(tempPerfil);
     }

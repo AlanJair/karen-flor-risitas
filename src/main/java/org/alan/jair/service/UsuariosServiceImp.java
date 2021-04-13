@@ -98,7 +98,7 @@ public class UsuariosServiceImp implements IntUsuariosService {
 	@Override
 	public void eliminar(Integer idUsuario) {
 		// TODO Auto-generated method stub
-		lista.remove(idUsuario);
+		//lista.remove(idUsuario);
 
 	}
 

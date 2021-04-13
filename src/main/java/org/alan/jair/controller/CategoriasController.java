@@ -3,17 +3,13 @@ package org.alan.jair.controller;
 import java.util.List;
 
 import org.alan.jair.model.categoria;
-import org.alan.jair.model.vacante;
-import org.alan.jair.service.CategoriasServiceImp;
+
 import org.alan.jair.service.IntCategoriasService;
-import org.alan.jair.service.IntVacantesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
